@@ -39,19 +39,19 @@ public class StringCalculator {
                 }
             }
             else{
-                    numberArray.addAll(Arrays.asList(numbers.replaceAll("\n","").split(delimiter)));
+                numberArray.addAll(Arrays.asList(numbers.replaceAll("\n","").split(delimiter)));
             }
 
             for (String number: numberArray) {
-               if(number.length()>0){
-                   int num = Integer.parseInt(number);
-                   if(num<0 ){
-                       negativeNumbers.add(num);
-                   }
-                   else if (num<=1000) {
-                       sum+=num;
-                   }
-               }
+                if(number.length()>0){
+                    int num = Integer.parseInt(number);
+                    if(num<0 ){
+                        negativeNumbers.add(num);
+                    }
+                    else if (num<=1000) {
+                        sum+=num;
+                    }
+                }
             }
             if(!negativeNumbers.isEmpty()){
                 throw new RuntimeException("negatives not allowed " + negativeNumbers.toString().replaceAll(" ",""));
